@@ -6,4 +6,9 @@
   <% end %>
 </ul>
 
+<%= paginate @tasks %>
+
 <%= link_to '新規タスクの投稿', new_task_path %>
+
+<%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %><!--お試し-->
+<%= link_to 'Logout', logout_path, method: :delete %><!--お試し-->

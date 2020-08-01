@@ -1,7 +1,11 @@
 class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy]
     def index
-        @tasks = Task.all 
+        if logged_in?
+        @tasks = Task.all.page(params[:page]).per(3)
+        else
+        redirect_to login_url
+        end
     end
     
     def show
